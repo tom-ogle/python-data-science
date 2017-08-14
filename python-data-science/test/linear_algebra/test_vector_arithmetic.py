@@ -2,7 +2,7 @@ import unittest
 from unittest import TestCase
 
 from linear_algebra.vector_arithmetic import vector_add, vector_subtract, vector_sum, scalar_multiply, vector_mean, \
-    dot_product, sum_of_squares, magnitude, square_distance, distance
+    dot_product, sum_of_squares, magnitude, distance
 
 
 class TestVectorArithmetic(TestCase):
