@@ -1,7 +1,7 @@
 import unittest
 from unittest import TestCase
 
-from linear_algebra.matrices import shape, get_row, get_column
+from linear_algebra.matrices import shape, get_row, get_column, make_matrix, indentity_matrix
 
 
 class TestMatrices(TestCase):
@@ -51,8 +51,25 @@ class TestMatrices(TestCase):
             [3, 2, 1],
             ['x', 'y', 'z']
         ]
-        row = get_column(matrix, 2)
-        self.assertEqual([3, 'c', 1, 'z'], row)
+        column = get_column(matrix, 2)
+        self.assertEqual([3, 'c', 1, 'z'], column)
+
+    def test_make_matrix(self):
+        expected_result = [
+            [1, 1, 1, 1],
+            [1, 1, 1, 1]
+        ]
+        result = make_matrix(2, 4, lambda i, j: 1)
+        self.assertEqual(expected_result, result)
+
+    def test_identity_matrix(self):
+        expected_result = [
+            [1, 0, 0],
+            [0, 1, 0],
+            [0, 0, 1],
+        ]
+        result = indentity_matrix(3, 3)
+        self.assertEqual(expected_result, result)
 
 if __name__ == '__main__':
     unittest.main()
